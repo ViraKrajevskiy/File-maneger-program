@@ -22,12 +22,12 @@ translations = {
         'parent_id': 'ID родителя (или пусто): ',
         'file_path': 'Путь к файлу: ',
         'directory_path': 'Путь к каталогу: ',
-        'file_saved': '✅ Файл сохранён.',
-        'directory_saved': '✅ Каталог сохранён.',
-        'invalid_file': '❌ Указанный путь не ведёт к файлу.',
-        'invalid_dir': '❌ Указанный путь не ведёт к каталогу.',
-        'invalid_choice': '❌ Неверный выбор. Попробуйте снова.',
-        'sort_invalid': '❌ Неверный критерий сортировки.',
+        'file_saved': 'Файл сохранён.',
+        'directory_saved': 'Каталог сохранён.',
+        'invalid_file': 'Указанный путь не ведёт к файлу.',
+        'invalid_dir': 'Указанный путь не ведёт к каталогу.',
+        'invalid_choice': 'Неверный выбор. Попробуйте снова.',
+        'sort_invalid': 'Неверный критерий сортировки.',
         'enter_name_to_search': 'Введите имя для поиска: ',
         'update_id': 'ID элемента для обновления: ',
         'new_name': 'Новое имя: ',
@@ -51,12 +51,12 @@ translations = {
         'parent_id': 'Ota ID (yoki bo‘sh): ',
         'file_path': 'Fayl yo‘li: ',
         'directory_path': 'Katalog yo‘li: ',
-        'file_saved': '✅ Fayl saqlandi.',
-        'directory_saved': '✅ Katalog saqlandi.',
-        'invalid_file': '❌ Ko‘rsatilgan yo‘l fayl emas.',
-        'invalid_dir': '❌ Ko‘rsatilgan yo‘l katalog emas.',
-        'invalid_choice': '❌ Noto‘g‘ri tanlov. Qayta urinib ko‘ring.',
-        'sort_invalid': '❌ Noto‘g‘ri saralash mezoni.',
+        'file_saved': 'Fayl saqlandi.',
+        'directory_saved': 'Katalog saqlandi.',
+        'invalid_file': 'Ko‘rsatilgan yo‘l fayl emas.',
+        'invalid_dir': 'Ko‘rsatilgan yo‘l katalog emas.',
+        'invalid_choice': 'Noto‘g‘ri tanlov. Qayta urinib ko‘ring.',
+        'sort_invalid': 'Noto‘g‘ri saralash mezoni.',
         'enter_name_to_search': 'Qidiriladigan nomni kiriting: ',
         'update_id': 'Yangilanadigan ID: ',
         'new_name': 'Yangi nom: ',
@@ -80,12 +80,12 @@ translations = {
         'parent_id': 'Parent ID (or empty): ',
         'file_path': 'File path: ',
         'directory_path': 'Directory path: ',
-        'file_saved': '✅ File saved.',
-        'directory_saved': '✅ Directory saved.',
-        'invalid_file': '❌ The specified path is not a file.',
-        'invalid_dir': '❌ The specified path is not a directory.',
-        'invalid_choice': '❌ Invalid choice. Try again.',
-        'sort_invalid': '❌ Invalid sorting criteria.',
+        'file_saved': 'File saved.',
+        'directory_saved': 'Directory saved.',
+        'invalid_file': 'The specified path is not a file.',
+        'invalid_dir': 'The specified path is not a directory.',
+        'invalid_choice': 'Invalid choice. Try again.',
+        'sort_invalid': 'Invalid sorting criteria.',
         'enter_name_to_search': 'Enter name to search: ',
         'update_id': 'ID of item to update: ',
         'new_name': 'New name: ',
@@ -185,9 +185,9 @@ WHERE name ILIKE %s AND deleted_at IS NULL
                 with conn:
                     with conn.cursor() as cursor:
                         cursor.execute("UPDATE items SET name = %s WHERE id = %s", (new_name, item_id))
-                        print("✅ " + t('update_name'))
+                        print(t('update_name'))
         except ValueError:
-            print("❌ Неверный формат ID.")
+            print("Неверный формат ID.")
         except psycopg2.Error as e:
             print(f"Ошибка при обновлении: {e}")
 
@@ -200,9 +200,9 @@ WHERE name ILIKE %s AND deleted_at IS NULL
                 with conn:
                     with conn.cursor() as cursor:
                         cursor.execute("UPDATE items SET deleted_at = %s WHERE id = %s", (datetime.now(), item_id))
-                        print("✅ " + t('delete'))
+                        print(t('delete'))
         except ValueError:
-            print("❌ Неверный формат ID.")
+            print("Неверный формат ID.")
         except psycopg2.Error as e:
             print(f"Ошибка при удалении: {e}")
 
