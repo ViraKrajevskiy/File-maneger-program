@@ -3,7 +3,7 @@ from datetime import datetime
 import psycopg2
 import psycopg2.extras
 from tabulate import tabulate
-
+#super
 # =================== TRANSLATIONS ===================
 translations = {
     'ru': {
