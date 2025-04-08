@@ -232,6 +232,7 @@ def display_items(items):
         print(tabulate(items, headers="keys", tablefmt="grid"))
 
 # =================== MAIN MENU ===================
+#choose language
 def main():
     global current_lang
     lang = input("Выберите язык (ru/uz/en): ").strip().lower()
